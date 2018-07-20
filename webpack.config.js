@@ -14,6 +14,9 @@ const commonConfig = merge([
         output: {
             path: path.resolve(__dirname, "dist"),
             filename: 'js/bundle.js'
+        },
+        resolve:{
+            extensions: ['.js', '.jsx'],
         }
     },
     html,
@@ -21,16 +24,16 @@ const commonConfig = merge([
     babelJs
 ]);
 
-module.exports = function(env) {
+module.exports = function(env, argv) {
 
-    if(env === 'production'){
+    if(argv.mode === 'production'){
         return merge([
             commonConfig,
             extaractCSS
         ])
     }
 
-    if(env === 'development'){
+    if(argv.mode === 'development'){
         return merge([
             commonConfig,
             sass,

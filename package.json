@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": " webpack-dev-server --env development",
-    "prod": "yarn run remove && webpack -p --env production",
+    "dev": " webpack-dev-server --mode development",
+    "prod": "yarn run remove && webpack -p --mode production",
     "remove": "rimraf ./dist/*"
   },
   "devDependencies": {
